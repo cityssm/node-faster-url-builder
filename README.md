@@ -37,3 +37,11 @@ console.log(new FasterUrlBuilder('test-tenant').loginUrl)
 - `inventorySearchUrl(searchString)`
 - `workOrderSearchUrl(searchString)`
 - `workOrderUrl(workOrderNumber)`
+
+## Related Projects
+
+[FASTER Web Report Exporter](https://github.com/cityssm/node-faster-report-exporter)<br />
+On demand exports of selected reports from the FASTER Web Fleet Management System.
+
+[FASTER Web Helper](https://github.com/cityssm/faster-web-helper)<br />
+A service to support integrations with the FASTER Web fleet management system.
