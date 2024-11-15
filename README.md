@@ -2,7 +2,9 @@
 
 [![npm (scoped)](https://img.shields.io/npm/v/@cityssm/faster-url-builder)](https://www.npmjs.com/package/@cityssm/faster-url-builder)
 [![Maintainability](https://api.codeclimate.com/v1/badges/e0a774a12da546a21225/maintainability)](https://codeclimate.com/github/cityssm/node-faster-url-builder/maintainability)
+[![codecov](https://codecov.io/gh/cityssm/node-faster-url-builder/graph/badge.svg?token=JP9K9I27WP)](https://codecov.io/gh/cityssm/node-faster-url-builder)
 [![DeepSource](https://app.deepsource.com/gh/cityssm/node-faster-url-builder.svg/?label=active+issues&show_trend=true&token=GLlKrpnVzE3Qg4436K556yJu)](https://app.deepsource.com/gh/cityssm/node-faster-url-builder/)
+[![Coverage Testing](https://github.com/cityssm/node-faster-url-builder/actions/workflows/coverage.yml/badge.svg)](https://github.com/cityssm/node-faster-url-builder/actions/workflows/coverage.yml)
 
 Builds URLs for the
 [FASTER Web Fleet Management System](https://fasterasset.com/products/fleet-management-software/).
