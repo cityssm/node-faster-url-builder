@@ -1,4 +1,17 @@
-type FasterBaseUrl = `https://${string}.fasterwebcloud.com/FASTER`
+export type FasterBaseUrl = `https://${string}.fasterwebcloud.com/FASTER`
+
+/**
+ * Tests if a base URL is valid.
+ * @param fasterBaseUrl - A possible FASTER Web base URL.
+ * @returns `true` if the base URL is valid.
+ */
+export function isValidBaseUrl(
+  fasterBaseUrl: string
+): fasterBaseUrl is FasterBaseUrl {
+  return (
+    fasterBaseUrl.startsWith('https://') && fasterBaseUrl.endsWith('/FASTER')
+  )
+}
 
 export class FasterUrlBuilder {
   /** Base URL */
@@ -9,6 +22,7 @@ export class FasterUrlBuilder {
 
   readonly #inventorySearchUrl: `${FasterBaseUrl}/Domains/Parts/Search/Default.aspx?xact=False&type=False&str=`
 
+  // eslint-disable-next-line no-secrets/no-secrets
   readonly #workOrderSearchUrl: `${FasterBaseUrl}/Domains/Maintenance/WorkOrder/Search/Default.aspx?xact=False&type=False&str=`
   readonly #workOrderUrl: `${FasterBaseUrl}/Domains/Maintenance/WorkOrder/WorkOrderMaster.aspx?workOrderID=`
 
@@ -17,16 +31,25 @@ export class FasterUrlBuilder {
 
   /**
    * Initializes the FasterUrlBuilder
-   * @param fasterTenant - The subdomain of the FASTER Web URL before ".fasterwebcloud.com"
+   * @param fasterTenantOrBaseUrl - The subdomain of the FASTER Web URL before ".fasterwebcloud.com"
+   *                                or the full domain and path including "/FASTER"
    */
-  constructor(fasterTenant: string) {
-    this.baseUrl = `https://${fasterTenant}.fasterwebcloud.com/FASTER`
+  constructor(fasterTenantOrBaseUrl: string) {
+    this.baseUrl = fasterTenantOrBaseUrl.startsWith('https')
+      ? (fasterTenantOrBaseUrl as FasterBaseUrl)
+      : `https://${fasterTenantOrBaseUrl}.fasterwebcloud.com/FASTER`
+
+    if (!isValidBaseUrl(this.baseUrl)) {
+      throw new Error(`Invalid base URL: ${this.baseUrl as string}`)
+    }
+
     this.loginUrl = `${this.baseUrl}/Login`
 
     /* Inventory */
     this.#inventorySearchUrl = `${this.baseUrl}/Domains/Parts/Search/Default.aspx?xact=False&type=False&str=`
 
     /* Maintenance */
+    // eslint-disable-next-line no-secrets/no-secrets
     this.#workOrderSearchUrl = `${this.baseUrl}/Domains/Maintenance/WorkOrder/Search/Default.aspx?xact=False&type=False&str=`
     this.#workOrderUrl = `${this.baseUrl}/Domains/Maintenance/WorkOrder/WorkOrderMaster.aspx?workOrderID=`
 

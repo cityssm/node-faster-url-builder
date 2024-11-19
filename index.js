@@ -1,23 +1,39 @@
+/**
+ * Tests if a base URL is valid.
+ * @param fasterBaseUrl - A possible FASTER Web base URL.
+ * @returns `true` if the base URL is valid.
+ */
+export function isValidBaseUrl(fasterBaseUrl) {
+    return (fasterBaseUrl.startsWith('https://') && fasterBaseUrl.endsWith('/FASTER'));
+}
 export class FasterUrlBuilder {
     /** Base URL */
     baseUrl;
     /** Login URL */
     loginUrl;
     #inventorySearchUrl;
+    // eslint-disable-next-line no-secrets/no-secrets
     #workOrderSearchUrl;
     #workOrderUrl;
     /** Report Viewer URL - Parameters required */
     reportViewerUrl;
     /**
      * Initializes the FasterUrlBuilder
-     * @param fasterTenant - The subdomain of the FASTER Web URL before ".fasterwebcloud.com"
+     * @param fasterTenantOrBaseUrl - The subdomain of the FASTER Web URL before ".fasterwebcloud.com"
+     *                                or the full domain and path including "/FASTER"
      */
-    constructor(fasterTenant) {
-        this.baseUrl = `https://${fasterTenant}.fasterwebcloud.com/FASTER`;
+    constructor(fasterTenantOrBaseUrl) {
+        this.baseUrl = fasterTenantOrBaseUrl.startsWith('https')
+            ? fasterTenantOrBaseUrl
+            : `https://${fasterTenantOrBaseUrl}.fasterwebcloud.com/FASTER`;
+        if (!isValidBaseUrl(this.baseUrl)) {
+            throw new Error(`Invalid base URL: ${this.baseUrl}`);
+        }
         this.loginUrl = `${this.baseUrl}/Login`;
         /* Inventory */
         this.#inventorySearchUrl = `${this.baseUrl}/Domains/Parts/Search/Default.aspx?xact=False&type=False&str=`;
         /* Maintenance */
+        // eslint-disable-next-line no-secrets/no-secrets
         this.#workOrderSearchUrl = `${this.baseUrl}/Domains/Maintenance/WorkOrder/Search/Default.aspx?xact=False&type=False&str=`;
         this.#workOrderUrl = `${this.baseUrl}/Domains/Maintenance/WorkOrder/WorkOrderMaster.aspx?workOrderID=`;
         /* Reports */

@@ -1,4 +1,10 @@
-type FasterBaseUrl = `https://${string}.fasterwebcloud.com/FASTER`;
+export type FasterBaseUrl = `https://${string}.fasterwebcloud.com/FASTER`;
+/**
+ * Tests if a base URL is valid.
+ * @param fasterBaseUrl - A possible FASTER Web base URL.
+ * @returns `true` if the base URL is valid.
+ */
+export declare function isValidBaseUrl(fasterBaseUrl: string): fasterBaseUrl is FasterBaseUrl;
 export declare class FasterUrlBuilder {
     #private;
     /** Base URL */
@@ -9,9 +15,10 @@ export declare class FasterUrlBuilder {
     readonly reportViewerUrl: `${FasterBaseUrl}/Domains/Reports/ReportViewer.aspx`;
     /**
      * Initializes the FasterUrlBuilder
-     * @param fasterTenant - The subdomain of the FASTER Web URL before ".fasterwebcloud.com"
+     * @param fasterTenantOrBaseUrl - The subdomain of the FASTER Web URL before ".fasterwebcloud.com"
+     *                                or the full domain and path including "/FASTER"
      */
-    constructor(fasterTenant: string);
+    constructor(fasterTenantOrBaseUrl: string);
     /**
      * Builds a URL for the inventory search.
      * @param searchString - Item number search string
