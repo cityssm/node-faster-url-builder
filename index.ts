@@ -1,4 +1,4 @@
-export type FasterBaseUrl = `https://${string}.fasterwebcloud.com/FASTER`
+export type FasterBaseUrl = `https://${string}/FASTER`
 
 /**
  * Tests if a base URL is valid.
