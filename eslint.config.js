@@ -5,7 +5,7 @@ const config = tseslint.config(...eslintConfigCityssm, {
             'warn',
             {
                 cspell: {
-                    words: [...cspellWords, 'fasterwebcloud']
+                    words: [...cspellWords, 'fasterwebcloud', 'xact']
                 }
             }
         ]
