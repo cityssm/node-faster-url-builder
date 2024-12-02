@@ -21,6 +21,7 @@ export class FasterUrlBuilder {
   readonly loginUrl: `${FasterBaseUrl}/Login`
 
   readonly #inventorySearchUrl: `${FasterBaseUrl}/Domains/Parts/Search/Default.aspx?xact=False&type=False&str=`
+  readonly inventoryItemRequestSearchUrl: `${FasterBaseUrl}/Domains/Parts/PartRequest/PartsRequest.aspx`
 
   // eslint-disable-next-line no-secrets/no-secrets
   readonly #workOrderSearchUrl: `${FasterBaseUrl}/Domains/Maintenance/WorkOrder/Search/Default.aspx?xact=False&type=False&str=`
@@ -47,6 +48,7 @@ export class FasterUrlBuilder {
 
     /* Inventory */
     this.#inventorySearchUrl = `${this.baseUrl}/Domains/Parts/Search/Default.aspx?xact=False&type=False&str=`
+    this.inventoryItemRequestSearchUrl = `${this.baseUrl}/Domains/Parts/PartRequest/PartsRequest.aspx`
 
     /* Maintenance */
     // eslint-disable-next-line no-secrets/no-secrets

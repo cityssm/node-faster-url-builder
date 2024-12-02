@@ -12,6 +12,7 @@ export class FasterUrlBuilder {
     /** Login URL */
     loginUrl;
     #inventorySearchUrl;
+    inventoryItemRequestSearchUrl;
     // eslint-disable-next-line no-secrets/no-secrets
     #workOrderSearchUrl;
     #workOrderUrl;
@@ -32,6 +33,7 @@ export class FasterUrlBuilder {
         this.loginUrl = `${this.baseUrl}/Login`;
         /* Inventory */
         this.#inventorySearchUrl = `${this.baseUrl}/Domains/Parts/Search/Default.aspx?xact=False&type=False&str=`;
+        this.inventoryItemRequestSearchUrl = `${this.baseUrl}/Domains/Parts/PartRequest/PartsRequest.aspx`;
         /* Maintenance */
         // eslint-disable-next-line no-secrets/no-secrets
         this.#workOrderSearchUrl = `${this.baseUrl}/Domains/Maintenance/WorkOrder/Search/Default.aspx?xact=False&type=False&str=`;

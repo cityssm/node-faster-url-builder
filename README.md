@@ -30,6 +30,7 @@ console.log(new FasterUrlBuilder('test-tenant').loginUrl)
 
 - `baseUrl`
 - `loginUrl`
+- `inventoryItemRequestSearchUrl`
 - `reportViewerUrl`
 
 ## Included Helper Functions

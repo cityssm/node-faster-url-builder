@@ -9,13 +9,13 @@ await describe('faster-url-builder', async () => {
         const fasterUrlBuilderFromUrl = new FasterUrlBuilder(testBaseUrl);
         assert.strictEqual(fasterUrlBuilderFromUrl.baseUrl, testBaseUrl);
     });
-    await it('Constructs a proper base URL from a tenant', () => {
+    await it('Constructs the base URL from a tenant', () => {
         assert(fasterUrlBuilder.baseUrl.includes(tenant));
     });
-    await it('Constructs a proper login URL', () => {
+    await it('Constructs a login URL', () => {
         assert(fasterUrlBuilder.loginUrl.startsWith(fasterUrlBuilder.baseUrl));
     });
-    await it('Constructs a proper report viewer URL', () => {
+    await it('Constructs a report viewer URL', () => {
         assert(fasterUrlBuilder.reportViewerUrl.startsWith(fasterUrlBuilder.baseUrl));
     });
     await it('Constructs an inventory search URL', () => {
@@ -23,6 +23,9 @@ await describe('faster-url-builder', async () => {
         const inventorySearchUrl = fasterUrlBuilder.inventorySearchUrl(searchString);
         assert(inventorySearchUrl.startsWith(fasterUrlBuilder.baseUrl));
         assert(inventorySearchUrl.endsWith(searchString));
+    });
+    await it('Constructs an inventory item request search URL', () => {
+        assert(fasterUrlBuilder.inventoryItemRequestSearchUrl.startsWith(fasterUrlBuilder.baseUrl));
     });
     await it('Constructs a work order search URL', () => {
         const searchString = '00001';

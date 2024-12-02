@@ -11,6 +11,7 @@ export declare class FasterUrlBuilder {
     readonly baseUrl: FasterBaseUrl;
     /** Login URL */
     readonly loginUrl: `${FasterBaseUrl}/Login`;
+    readonly inventoryItemRequestSearchUrl: `${FasterBaseUrl}/Domains/Parts/PartRequest/PartsRequest.aspx`;
     /** Report Viewer URL - Parameters required */
     readonly reportViewerUrl: `${FasterBaseUrl}/Domains/Reports/ReportViewer.aspx`;
     /**
