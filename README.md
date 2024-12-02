@@ -41,8 +41,6 @@ console.log(new FasterUrlBuilder('test-tenant').loginUrl)
 
 ## Related Projects
 
-[**FASTER Web Report Exporter**](https://github.com/cityssm/node-faster-report-exporter)<br />
-On demand exports of selected reports from the FASTER Web Fleet Management System.
+_Building an intergration with FASTER Web?_
 
-[**FASTER Web Helper**](https://github.com/cityssm/faster-web-helper)<br />
-A service to support integrations with the FASTER Web fleet management system.
+[Have a look at the City's open source projects related to FASTER Web](https://github.com/cityssm/faster-web-projects).
