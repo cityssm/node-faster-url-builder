@@ -1,7 +1,7 @@
 {
   "name": "@cityssm/faster-url-builder",
   "type": "module",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Builds URLs for the FASTER Web Fleet Management System",
   "exports": "./index.js",
   "scripts": {
