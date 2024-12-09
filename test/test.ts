@@ -27,6 +27,12 @@ await describe('faster-url-builder', async () => {
     )
   })
 
+  await it('Constructs a technician workstation URL', () => {
+    assert(
+      fasterUrlBuilder.technicianWorkstationUrl.startsWith(fasterUrlBuilder.baseUrl)
+    )
+  })
+
   await it('Constructs an inventory search URL', () => {
     const searchString = '00001'
     const inventorySearchUrl = fasterUrlBuilder.inventorySearchUrl(

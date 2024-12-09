@@ -18,6 +18,7 @@ export class FasterUrlBuilder {
     #workOrderUrl;
     /** Report Viewer URL - Parameters required */
     reportViewerUrl;
+    technicianWorkstationUrl;
     /**
      * Initializes the FasterUrlBuilder
      * @param fasterTenantOrBaseUrl - The subdomain of the FASTER Web URL before ".fasterwebcloud.com"
@@ -40,6 +41,8 @@ export class FasterUrlBuilder {
         this.#workOrderUrl = `${this.baseUrl}/Domains/Maintenance/WorkOrder/WorkOrderMaster.aspx?workOrderID=`;
         /* Reports */
         this.reportViewerUrl = `${this.baseUrl}/Domains/Reports/ReportViewer.aspx`;
+        /* Technician Workstation */
+        this.technicianWorkstationUrl = `${this.baseUrl}Tech`;
     }
     /**
      * Builds a URL for the inventory search.

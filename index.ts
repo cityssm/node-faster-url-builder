@@ -30,6 +30,8 @@ export class FasterUrlBuilder {
   /** Report Viewer URL - Parameters required */
   readonly reportViewerUrl: `${FasterBaseUrl}/Domains/Reports/ReportViewer.aspx`
 
+  readonly technicianWorkstationUrl: `${FasterBaseUrl}Tech`
+
   /**
    * Initializes the FasterUrlBuilder
    * @param fasterTenantOrBaseUrl - The subdomain of the FASTER Web URL before ".fasterwebcloud.com"
@@ -57,6 +59,9 @@ export class FasterUrlBuilder {
 
     /* Reports */
     this.reportViewerUrl = `${this.baseUrl}/Domains/Reports/ReportViewer.aspx`
+
+    /* Technician Workstation */
+    this.technicianWorkstationUrl = `${this.baseUrl}Tech`
   }
 
   /**

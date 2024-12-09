@@ -14,6 +14,7 @@ export declare class FasterUrlBuilder {
     readonly inventoryItemRequestSearchUrl: `${FasterBaseUrl}/Domains/Parts/PartRequest/PartsRequest.aspx`;
     /** Report Viewer URL - Parameters required */
     readonly reportViewerUrl: `${FasterBaseUrl}/Domains/Reports/ReportViewer.aspx`;
+    readonly technicianWorkstationUrl: `${FasterBaseUrl}Tech`;
     /**
      * Initializes the FasterUrlBuilder
      * @param fasterTenantOrBaseUrl - The subdomain of the FASTER Web URL before ".fasterwebcloud.com"
