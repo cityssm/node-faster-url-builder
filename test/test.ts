@@ -29,7 +29,9 @@ await describe('faster-url-builder', async () => {
 
   await it('Constructs a technician workstation URL', () => {
     assert(
-      fasterUrlBuilder.technicianWorkstationUrl.startsWith(fasterUrlBuilder.baseUrl)
+      fasterUrlBuilder.technicianWorkstationUrl.startsWith(
+        fasterUrlBuilder.baseUrl
+      )
     )
   })
 
@@ -43,10 +45,11 @@ await describe('faster-url-builder', async () => {
     assert(inventorySearchUrl.endsWith(searchString))
   })
 
-  
   await it('Constructs an inventory item request search URL', () => {
     assert(
-      fasterUrlBuilder.inventoryItemRequestSearchUrl.startsWith(fasterUrlBuilder.baseUrl)
+      fasterUrlBuilder.inventoryItemRequestSearchUrl.startsWith(
+        fasterUrlBuilder.baseUrl
+      )
     )
   })
 
