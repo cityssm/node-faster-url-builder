@@ -42,7 +42,8 @@ export class FasterUrlBuilder {
    */
   constructor(fasterTenantOrBaseUrl: string) {
     this.baseUrl = fasterTenantOrBaseUrl.startsWith('https://')
-      ? (fasterTenantOrBaseUrl as FasterBaseUrl)
+      ? // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
+        (fasterTenantOrBaseUrl as FasterBaseUrl)
       : `https://${fasterTenantOrBaseUrl}.fasterwebcloud.com/FASTER`
 
     if (!isValidBaseUrl(this.baseUrl)) {
