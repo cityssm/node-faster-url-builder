@@ -27,7 +27,7 @@ export class FasterUrlBuilder {
      *                                or the full domain and path including "/FASTER"
      */
     constructor(fasterTenantOrBaseUrl) {
-        this.baseUrl = isValidBaseUrl(fasterTenantOrBaseUrl)
+        this.baseUrl = fasterTenantOrBaseUrl.startsWith('https://')
             ? fasterTenantOrBaseUrl
             : `https://${fasterTenantOrBaseUrl}.fasterwebcloud.com/FASTER`;
         if (!isValidBaseUrl(this.baseUrl)) {
