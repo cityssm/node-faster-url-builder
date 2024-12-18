@@ -12,12 +12,14 @@ export class FasterUrlBuilder {
     /** Login URL */
     loginUrl;
     #inventorySearchUrl;
+    /** Inventory Item Request Search URL */
     inventoryItemRequestSearchUrl;
     // eslint-disable-next-line no-secrets/no-secrets
     #workOrderSearchUrl;
     #workOrderUrl;
     /** Report Viewer URL - Parameters required */
     reportViewerUrl;
+    /** Technician Workstation URL */
     technicianWorkstationUrl;
     /**
      * Initializes the FasterUrlBuilder

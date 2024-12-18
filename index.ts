@@ -21,6 +21,8 @@ export class FasterUrlBuilder {
   readonly loginUrl: `${FasterBaseUrl}/Login`
 
   readonly #inventorySearchUrl: `${FasterBaseUrl}/Domains/Parts/Search/Default.aspx?xact=False&type=False&str=`
+  
+  /** Inventory Item Request Search URL */
   readonly inventoryItemRequestSearchUrl: `${FasterBaseUrl}/Domains/Parts/PartRequest/PartsRequest.aspx`
 
   // eslint-disable-next-line no-secrets/no-secrets
@@ -30,6 +32,7 @@ export class FasterUrlBuilder {
   /** Report Viewer URL - Parameters required */
   readonly reportViewerUrl: `${FasterBaseUrl}/Domains/Reports/ReportViewer.aspx`
 
+  /** Technician Workstation URL */
   readonly technicianWorkstationUrl: `${FasterBaseUrl}Tech`
 
   /**
