@@ -84,16 +84,17 @@ await describe('faster-url-builder/errors', async () => {
 
     let declaredSuccessfully = false
 
-    // eslint-disable-next-line @typescript-eslint/init-declarations
-    let builder: FasterUrlBuilder | undefined
+    const badInitialUrl = 'https://test.example.com/FASTE'
 
     try {
-      builder = new FasterUrlBuilder('https://test.example.com/FASTE')
+      // eslint-disable-next-line no-new
+      new FasterUrlBuilder(badInitialUrl)
       declaredSuccessfully = true
     } catch {}
+
     if (declaredSuccessfully) {
       assert.fail(
-        `URL builder declared successfully with invalid URL: ${(builder as FasterUrlBuilder).baseUrl}`
+        `URL builder declared successfully with invalid URL: ${badInitialUrl}`
       )
     }
   })
