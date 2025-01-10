@@ -22,8 +22,8 @@
   },
   "homepage": "https://github.com/cityssm/node-faster-url-builder#readme",
   "devDependencies": {
-    "@types/node": "^22.10.2",
-    "eslint-config-cityssm": "^18.1.2",
+    "@types/node": "^22.10.5",
+    "eslint-config-cityssm": "^18.3.0",
     "prettier-config-cityssm": "^1.0.0"
   }
 }
