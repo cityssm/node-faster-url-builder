@@ -32,6 +32,9 @@ export class FasterUrlBuilder {
   /** Report Viewer URL - Parameters required */
   readonly reportViewerUrl: `${FasterBaseUrl}/Domains/Reports/ReportViewer.aspx`
 
+  /** Integrations Console URL */
+  readonly integrationsUrl: `${FasterBaseUrl}/Domains/Integrations/Default.aspx`
+
   /** Technician Workstation URL */
   readonly technicianWorkstationUrl: `${FasterBaseUrl}Tech`
 
@@ -63,6 +66,9 @@ export class FasterUrlBuilder {
 
     /* Reports */
     this.reportViewerUrl = `${this.baseUrl}/Domains/Reports/ReportViewer.aspx`
+
+    /* Integrations */
+    this.integrationsUrl = `${this.baseUrl}/Domains/Integrations/Default.aspx`
 
     /* Technician Workstation */
     this.technicianWorkstationUrl = `${this.baseUrl}Tech`
