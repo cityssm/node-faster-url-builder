@@ -19,6 +19,8 @@ export class FasterUrlBuilder {
     #workOrderUrl;
     /** Report Viewer URL - Parameters required */
     reportViewerUrl;
+    /** Scheduled Reports URL */
+    scheduledReportsUrl;
     /** Integrations Console URL */
     integrationsUrl;
     /** Technician Workstation URL */
@@ -46,6 +48,7 @@ export class FasterUrlBuilder {
         this.#workOrderUrl = `${this.baseUrl}/Domains/Maintenance/WorkOrder/WorkOrderMaster.aspx?workOrderID=`;
         /* Reports */
         this.reportViewerUrl = `${this.baseUrl}/Domains/Reports/ReportViewer.aspx`;
+        this.scheduledReportsUrl = `${this.baseUrl}/Domains/Reports/Schedule.aspx`;
         /* Integrations */
         this.integrationsUrl = `${this.baseUrl}/Domains/Integrations/Default.aspx`;
         /* Technician Workstation */

@@ -27,6 +27,12 @@ await describe('faster-url-builder', async () => {
     )
   })
 
+  await it('Constructs a scheduled reports URL', () => {
+    assert(
+      fasterUrlBuilder.scheduledReportsUrl.startsWith(fasterUrlBuilder.baseUrl)
+    )
+  })
+
   await it('Constructs an integrations URL', () => {
     assert(
       fasterUrlBuilder.integrationsUrl.startsWith(fasterUrlBuilder.baseUrl)
