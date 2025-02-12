@@ -49,12 +49,18 @@ await describe('faster-url-builder', async () => {
 
   await it('Constructs an inventory search URL', () => {
     const searchString = '00001'
-    const inventorySearchUrl = fasterUrlBuilder.inventorySearchUrl(
-      searchString
-    ) as string
+    const inventorySearchUrl = fasterUrlBuilder.inventorySearchUrl(searchString)
 
     assert(inventorySearchUrl.startsWith(fasterUrlBuilder.baseUrl))
     assert(inventorySearchUrl.endsWith(searchString))
+  })
+
+  await it('Constructs an inventory item URL', () => {
+    const itemId = 10
+    const itemUrl = fasterUrlBuilder.itemUrl(itemId)
+
+    assert(itemUrl.startsWith(fasterUrlBuilder.baseUrl))
+    assert(itemUrl.endsWith(itemId.toString()))
   })
 
   await it('Constructs an inventory item request search URL', () => {

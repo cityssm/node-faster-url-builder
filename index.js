@@ -14,7 +14,7 @@ export class FasterUrlBuilder {
     #inventorySearchUrl;
     /** Inventory Item Request Search URL */
     inventoryItemRequestSearchUrl;
-    // eslint-disable-next-line no-secrets/no-secrets
+    #itemUrl;
     #workOrderSearchUrl;
     #workOrderUrl;
     /** Report Viewer URL - Parameters required */
@@ -40,11 +40,11 @@ export class FasterUrlBuilder {
         }
         this.loginUrl = `${this.baseUrl}/Login`;
         /* Inventory */
-        this.#inventorySearchUrl = `${this.baseUrl}/Domains/Parts/Search/Default.aspx?xact=False&type=False&str=`;
+        this.#inventorySearchUrl = `${this.baseUrl}/Domains/Parts/Search/Default.aspx`;
         this.inventoryItemRequestSearchUrl = `${this.baseUrl}/Domains/Parts/PartRequest/PartsRequest.aspx`;
+        this.#itemUrl = `${this.baseUrl}/Domains/Parts/PartDetail/Default.aspx?id=`;
         /* Maintenance */
-        // eslint-disable-next-line no-secrets/no-secrets
-        this.#workOrderSearchUrl = `${this.baseUrl}/Domains/Maintenance/WorkOrder/Search/Default.aspx?xact=False&type=False&str=`;
+        this.#workOrderSearchUrl = `${this.baseUrl}/Domains/Maintenance/WorkOrder/Search/Default.aspx`;
         this.#workOrderUrl = `${this.baseUrl}/Domains/Maintenance/WorkOrder/WorkOrderMaster.aspx?workOrderID=`;
         /* Reports */
         this.reportViewerUrl = `${this.baseUrl}/Domains/Reports/ReportViewer.aspx`;
@@ -57,10 +57,19 @@ export class FasterUrlBuilder {
     /**
      * Builds a URL for the inventory search.
      * @param searchString - Item number search string
+     * @param exactMatch - `true` for exact match search
      * @returns Inventory search URL
      */
-    inventorySearchUrl(searchString = '') {
-        return `${this.#inventorySearchUrl}${searchString}`;
+    inventorySearchUrl(searchString = '', exactMatch = false) {
+        return `${this.#inventorySearchUrl}?xact=${exactMatch ? 'True' : 'False'}&str=${searchString}`;
+    }
+    /**
+     * Builds a URL for a given item.
+     * @param itemId - Item ID. This is not the item number.
+     * @returns Item URL
+     */
+    itemUrl(itemId) {
+        return `${this.#itemUrl}${itemId}`;
     }
     /**
      * Builds a URL for a given work order.
@@ -73,10 +82,11 @@ export class FasterUrlBuilder {
     /**
      * Builds a URL for the work order search.
      * @param searchString - Work order number or asset number search string
+     * @param exactMatch - `true` for exact match search
      * @returns Work order search URL
      */
-    workOrderSearchUrl(searchString = '') {
-        return `${this.#workOrderSearchUrl}${searchString}`;
+    workOrderSearchUrl(searchString = '', exactMatch = false) {
+        return `${this.#workOrderSearchUrl}?xact=${exactMatch ? 'True' : 'False'}&str=${searchString}`;
     }
 }
 export default FasterUrlBuilder;

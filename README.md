@@ -38,8 +38,9 @@ console.log(new FasterUrlBuilder('test-tenant').loginUrl)
 
 ## Included Helper Functions
 
-- `inventorySearchUrl(searchString)`
-- `workOrderSearchUrl(searchString)`
+- `inventorySearchUrl(searchString, exactMatch)`
+- `itemUrl(itemId)`
+- `workOrderSearchUrl(searchString, exactMatch)`
 - `workOrderUrl(workOrderNumber)`
 
 ## Related Projects

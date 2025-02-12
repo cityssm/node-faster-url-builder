@@ -30,9 +30,16 @@ export declare class FasterUrlBuilder {
     /**
      * Builds a URL for the inventory search.
      * @param searchString - Item number search string
+     * @param exactMatch - `true` for exact match search
      * @returns Inventory search URL
      */
-    inventorySearchUrl(searchString?: string): string;
+    inventorySearchUrl(searchString?: string, exactMatch?: boolean): string;
+    /**
+     * Builds a URL for a given item.
+     * @param itemId - Item ID. This is not the item number.
+     * @returns Item URL
+     */
+    itemUrl(itemId: number | string): string;
     /**
      * Builds a URL for a given work order.
      * @param workOrderNumber - Work order number
@@ -42,8 +49,9 @@ export declare class FasterUrlBuilder {
     /**
      * Builds a URL for the work order search.
      * @param searchString - Work order number or asset number search string
+     * @param exactMatch - `true` for exact match search
      * @returns Work order search URL
      */
-    workOrderSearchUrl(searchString?: string): string;
+    workOrderSearchUrl(searchString?: string, exactMatch?: boolean): string;
 }
 export default FasterUrlBuilder;
