@@ -14,33 +14,33 @@ await describe('faster-url-builder', async () => {
   })
 
   await it('Constructs the base URL from a tenant', () => {
-    assert(fasterUrlBuilder.baseUrl.includes(tenant))
+    assert.ok(fasterUrlBuilder.baseUrl.includes(tenant))
   })
 
   await it('Constructs a login URL', () => {
-    assert(fasterUrlBuilder.loginUrl.startsWith(fasterUrlBuilder.baseUrl))
+    assert.ok(fasterUrlBuilder.loginUrl.startsWith(fasterUrlBuilder.baseUrl))
   })
 
   await it('Constructs a report viewer URL', () => {
-    assert(
+    assert.ok(
       fasterUrlBuilder.reportViewerUrl.startsWith(fasterUrlBuilder.baseUrl)
     )
   })
 
   await it('Constructs a scheduled reports URL', () => {
-    assert(
+    assert.ok(
       fasterUrlBuilder.scheduledReportsUrl.startsWith(fasterUrlBuilder.baseUrl)
     )
   })
 
   await it('Constructs an integrations URL', () => {
-    assert(
+    assert.ok(
       fasterUrlBuilder.integrationsUrl.startsWith(fasterUrlBuilder.baseUrl)
     )
   })
 
   await it('Constructs a technician workstation URL', () => {
-    assert(
+    assert.ok(
       fasterUrlBuilder.technicianWorkstationUrl.startsWith(
         fasterUrlBuilder.baseUrl
       )
@@ -51,20 +51,20 @@ await describe('faster-url-builder', async () => {
     const searchString = '00001'
     const inventorySearchUrl = fasterUrlBuilder.inventorySearchUrl(searchString)
 
-    assert(inventorySearchUrl.startsWith(fasterUrlBuilder.baseUrl))
-    assert(inventorySearchUrl.endsWith(searchString))
+    assert.ok(inventorySearchUrl.startsWith(fasterUrlBuilder.baseUrl))
+    assert.ok(inventorySearchUrl.endsWith(searchString))
   })
 
   await it('Constructs an inventory item URL', () => {
     const itemId = 10
     const itemUrl = fasterUrlBuilder.itemUrl(itemId)
 
-    assert(itemUrl.startsWith(fasterUrlBuilder.baseUrl))
-    assert(itemUrl.endsWith(itemId.toString()))
+    assert.ok(itemUrl.startsWith(fasterUrlBuilder.baseUrl))
+    assert.ok(itemUrl.endsWith(itemId.toString()))
   })
 
   await it('Constructs an inventory item request search URL', () => {
-    assert(
+    assert.ok(
       fasterUrlBuilder.inventoryItemRequestSearchUrl.startsWith(
         fasterUrlBuilder.baseUrl
       )
@@ -73,22 +73,18 @@ await describe('faster-url-builder', async () => {
 
   await it('Constructs a work order search URL', () => {
     const searchString = '00001'
-    const workOrderSearchUrl = fasterUrlBuilder.workOrderSearchUrl(
-      searchString
-    ) as string
+    const workOrderSearchUrl = fasterUrlBuilder.workOrderSearchUrl(searchString)
 
-    assert(workOrderSearchUrl.startsWith(fasterUrlBuilder.baseUrl))
-    assert(workOrderSearchUrl.endsWith(searchString))
+    assert.ok(workOrderSearchUrl.startsWith(fasterUrlBuilder.baseUrl))
+    assert.ok(workOrderSearchUrl.endsWith(searchString))
   })
 
   await it('Constructs a work order URL', () => {
     const workOrderNumber = 10
-    const workOrderUrl = fasterUrlBuilder.workOrderUrl(
-      workOrderNumber
-    ) as string
+    const workOrderUrl = fasterUrlBuilder.workOrderUrl(workOrderNumber)
 
-    assert(workOrderUrl.startsWith(fasterUrlBuilder.baseUrl))
-    assert(workOrderUrl.endsWith(workOrderNumber.toString()))
+    assert.ok(workOrderUrl.startsWith(fasterUrlBuilder.baseUrl))
+    assert.ok(workOrderUrl.endsWith(workOrderNumber.toString()))
   })
 })
 

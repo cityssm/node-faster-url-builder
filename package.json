@@ -1,32 +1,32 @@
 {
   "name": "@cityssm/faster-url-builder",
-  "type": "module",
   "version": "1.1.0",
   "description": "Builds URLs for the FASTER Web Fleet Management System",
-  "exports": "./index.js",
-  "scripts": {
-    "test": "node --test",
-    "coverage": "c8 --reporter=lcov --reporter=text --reporter=text-summary node --test"
+  "keywords": [
+    "faster-web"
+  ],
+  "homepage": "https://github.com/cityssm/node-faster-url-builder#readme",
+  "bugs": {
+    "url": "https://github.com/cityssm/node-faster-url-builder/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cityssm/node-faster-url-builder.git"
   },
-  "keywords": [
-    "faster-web"
-  ],
-  "author": "The Corporation of the City of Sault Ste. Marie",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cityssm/node-faster-url-builder/issues"
-  },
-  "homepage": "https://github.com/cityssm/node-faster-url-builder#readme",
-  "devDependencies": {
-    "@types/node": "^22.13.4",
-    "eslint-config-cityssm": "^20.0.0",
-    "prettier-config-cityssm": "^1.0.0"
+  "author": "The Corporation of the City of Sault Ste. Marie",
+  "type": "module",
+  "exports": "./index.js",
+  "scripts": {
+    "coverage": "c8 --reporter=lcov --reporter=text --reporter=text-summary node --test",
+    "test": "node --test"
   },
   "dependencies": {
-    "@cityssm/faster-constants": "^0.2.0"
+    "@cityssm/faster-constants": "^0.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.23",
+    "eslint-config-cityssm": "^24.0.0",
+    "prettier-config-cityssm": "^1.0.0"
   }
 }
